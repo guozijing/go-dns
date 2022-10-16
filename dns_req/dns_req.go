@@ -78,8 +78,7 @@ func DigDN(dnsServerAddr, dn string) {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	bufR = bufR[:n]
-	q, _, i := dnsResDecode(bufR)
+	q, _, i := dnsResDecode(bufR[:n])
 	fmt.Println("Query: ", q)
 	fmt.Println("Answers: ", i)
 }
